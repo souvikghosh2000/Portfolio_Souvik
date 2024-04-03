@@ -1,299 +1,713 @@
-<!-- Go to this github repo  https://github.com/ashiksanyo10/Port_Temp.git and clone it to your local machine -->
-<!-- Open the local copy of code and edit the templete -->
-
-
-<!-- Dont alter any tags, fill in you information on required field only and dont alter style.css and javascript file-->
-<!-- once editing the templete, Create a github repo and push the code-->
-<!-- you can host the website on gitpages or netlify  -->
-<!---->
-
-
-
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Portfolio" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
-      rel="stylesheet"
-    />
-    <script
-      src="https://kit.fontawesome.com/fa62c117c7.js"
-      crossorigin="anonymous"
-    ></script>
-    <link rel="stylesheet" href="styles.css" />
-    <title>Souvik Ghosh</title>    <!-- Change it your name  --> .
-  </head>
-  <body class="light" id="top">
-    <header class="header center">
-      <h3>
-        <a href="https://drive.google.com/drive/u/1/folders/1RyE324FQPcR0ECISOlqspCxZNYCWDV2K" class="link"  
-          >{SG}. <!--insert your initials here --></a
-        >
-      </h3> <!--use the linkedIn or any link in above href-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+    <title>Souvik Ghosh's Portfolio</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+        #skills {
+            background-color: lightblue; /* Change the background color as per your preference */
+            color: #fff; /* Change text color */
+            padding: 50px; /* Add padding for spacing */
+        }
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
 
-      <nav class="nav center">
-        <ul class="nav__list center">
-          <li class="nav__list-item">
-            <a class="link link--nav" href="#projects">Projects</a>
-          </li>
-          <li class="nav__list-item">
-            <a class="link link--nav" href="#skills">Skills</a>
-          </li>
-          <li class="nav__list-item">
-            <a class="link link--nav" href="#Internship">Internship</a>
-          </li>
-          <!--   <li class="nav__list-item">
-            <a class="link link--nav" href="#Exp">Experience</a>
-          </li>-->
-        </ul>
+        .container{
+            height: 100vh;
+            width: 100vw;
+            background: #293241;
+            overflow-y: auto;
+        }
 
-        <button type="button" aria-label="toggle theme" class="btn btn--icon">
-          <i aria-hidden="true" id="btn-theme" class="fas fa-moon"></i>
-        </button>
+        .header{
+            width: 1400px;
+            height: 80px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 50px 5%;
+        }
 
-        <button
-          type="button"
-          aria-label="toggle navigation"
-          class="btn btn--icon nav__hamburger"
-        >
-          <i aria-hidden="true" class="fas fa-bars"></i>
-        </button>
-      </nav>
-    </header>
+        .header.shadow {
+            box-shadow: 0 4px 6px -6px #222;
+            transition: box-shadow 0.3s ease-in-out;
+        }
 
-    <main>  
-      <!-- About -->
-      <div class="about center">
-        <h1>Hi, I am <span class="about__name">Souvik Ghosh</span></h1>
-        <h2 class="about__role">Aspiring DataScientist</h2>
-        <p class="about__desc" style="text-align: center;"> <!-- Edit the About make sure you add your degree!-->
-          I have 1 year of experience working in IT and currently pursuing Master’s in Data Science. 
-          I have built several projects using NLP, Deep Learning, Machine Learning, and Python. Expertise in making dashboards using PowerBI.
-          I also hold Bachelor's degree in Computer Science Engineering.
-          Competencies: Python, Machine Learning, Deep Learning, NLP, Java/R, Analytics
-        </p> <!-- about you -->
-        <br>
-        <a href="mailto:ghsouvikprof@gmail.com">Mail: ghsouvikprof@gmail.com </a><p> Contact: +91 7980437510</p>  <!--Change it to your mail id and contact no-->
-      </br>
-      
+        .logo h1{
+            font-size: 25px;
+            color: #98c1d9;
+            font-weight: 600;
+            cursor: pointer;
+            letter-spacing: 0.1em;
+        }
 
-        <div class="about__contact center">
-          <a href="https://drive.google.com/file/d/1_-aWtutkDPSGfltAkNev9nX__FelH27O/view?usp=sharing" target="_blank"  > <!-- drive link for resume-->
-            <span class="btn btn--outline"> Resume</span> 
-          </a>
+        .logo span{
+            color: #e0fbfc;
+        }
 
-          <a
-            href="https://github.com/souvikghosh2000" target="_blank"
-            aria-label="github"
-            class="link link--icon"
-          >
-            <i aria-hidden="true" class="fab fa-github"></i>
-          </a> <!-- Github profile Link-->
 
-          <a
-            href="https://www.linkedin.com/in/souvik-ghosh-779a94160/" target="_blank"  
-            aria-label="linkedin"
-            class="link link--icon"
-          > 
-            <i aria-hidden="true" class="fab fa-linkedin"></i>
-          </a> <!-- LinledIn profile Link-->
-        </div>
-      </div>
+        #navbar {
+        background-color: #293241;
+        position: fixed;
+        width: 100%;
+        z-index: 1000;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
 
-      <!-- Projects -->
-      <section id="projects" class="section projects">
-        <h2 class="section__title">Projects</h2>
+        .nav-links ul{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            list-style-type: none;
+            gap: 50px;
+        }
 
-        <div class="projects__grid">
-          <div class="project">
-            <h3>Comparative Analysis of Image Analysis Algorithms</h3> <!--Peoject Title -->
-            <h4 style="color:red;">(Accepted in 14th ICCCNT 2023)</h4>
-            <p class="project__description">
-              This project aims to compare Machine Learning and Deep Learning algorithms in the case of Pneumonia Detection using Chest X-Ray Images dataset.
-            </p>
-             <!--Project description-->
-            <ul class="project__stack">
-              <li class="project__stack-item">Python</li>
-              <li class="project__stack-item">CNN</li>
-              <li class="project__stack-item">Machine Learning</li>
-            </ul>
+        .nav-links ul li a{
+            font-size: 20px;
+            text-decoration: none;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            color: #e0fbfc;
+            transition: 0.4s;
+        }
 
-            <a
-              href="https://github.com/souvikghosh2000/Image-Analysis-Project" target="_blank"
-              aria-label="source code"
-              class="link link--icon"
-            >  <!--Project link-->
+        .nav-links ul li a:hover{
+            color: #98c1d9;
+            font-size: 25px;
+        }
 
-              <i aria-hidden="true" class="fab fa-github"></i>
-            </a>
+        .section{
+            padding: 30px 5%;
+        }
+
+        .btn{
+            padding: 10px 20px;
+            color: #e0fbfc;
+            cursor: pointer;
+            display: inline-block;
+            text-decoration: none;
+            background: #3d5a80;
+            border-radius: 30px;
+            box-shadow: rgba(0, 0, 0, 0.6) 0px 2px 4px, 
+            rgba(0, 0, 0, 0.4) 0px 7px 13px -3px,
+            rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+            transition: 0.4s;
+            font-weight: 600;
+        }
+
+        .btn-primary{
+            margin-left: 100px;
+            color: #3d5a80;
+            background: #e0fbfc;
+        }
+
+        .btn:hover{
+            scale: 105%;
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+        }
+
+        .main-content{
+            width: 100%;
+            height: 100%;
+            padding-top: 180px;
             
-          </div>
+        }
 
-          <div class="project">
-            <h3> EmoBot: Real-Time Emotion Detection with Voice-Activated Assistant
-            </h3>
-            <p class="project__description">
-              A voice assistant which can detect voice and perform the necessary task and can also detect the emotion of the user. 
-            </p>
-            <ul class="project__stack">
-              <li class="project__stack-item">Python</li>
-              <li class="project__stack-item">Speech Recognition</li>
-              <li class="project__stack-item">NLP</li>
-            </ul>
+        .main{
+            position: relative;
+            width: 1400px;
+            height: 80%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px 5%;
+        }
 
-            <a
-              href="" target="_blank"
-              aria-label="https://github.com/souvikghosh2000/EmoBot" target="_blank"
-              class="link link--icon"
-            >
-              <i aria-hidden="true" class="fab fa-github"></i>
-            </a>
+        .line{
+            width: 80px;
+            border-bottom: 8px solid #ee6c4d;
+            margin-bottom: 30px;
+        }
+
+        .main h1{
             
-          </div>
+            font-size: 50px;
+            color: #98c1d9;
+            line-height: 1;
+        }
 
-          <div class="project">
-            <h3>Image Captioning </h3>
-            <p class="project__description">
-              We are in process of building an application from which we can click pictures and it will generate a caption of that image.
-            </p>
-            <ul class="project__stack">
-              <li class="project__stack-item">CNN</li>
-              <li class="project__stack-item">Android</li>
-              
-            </ul>
+        .main h2{
+        font-size: 40px; 
+        color: #98c1d9;
+        margin-bottom: 50px;
+        }
 
-           <!--<a
-              href="https://github.com/souvikghosh2000/Orphanage-Management-System" target="_blank"
-              aria-label="https://www.novypro.com/project/us-sales-dash" target="_blank"
-              class="link link--icon"
-            >
-              <i aria-hidden="true" class="fab fa-github"></i>
-            </a>
-          -->
-          </div>
-        </div>
-      </section>
-      <section id="Experience" class="section Experience" id="Experience">
-        <h2 class="section__title">Experience</h2>
-        <div class="project">
-          <h3>Cognizant, Engineer Trainee(Oct 21 - May 22)</h3>
-          <p class="project__description">
-           As a trainee key responsibility was to understand the client requirements, provide them with an appropriate solution or direct them to the appropriate team.
-           Participation in Calls/Status reporting.
-          </p>
-      </section>
+        .main span{
+            color: #ee6c4d;
+        }
+
+        .main p{
+            width: 700px;
+            font-size: 18px;
+            color: #e0fbfc;
+            margin-bottom: 30px;
+            letter-spacing: 0.05em;
+
+        }
+
+        .right{
+            z-index: 1;
+        }
+
+        .image{
+            position: relative;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            border: 50px solid #ee6c4d;
+            z-index: 1;
+            animation: anim 3s linear infinite;
+            object-fit: cover;
+            overflow: hidden;
+        }
+
+        @keyframes anim{
+            0%{
+                top: 0;
+            }
+            50%{
+                top: -10px;
+            }
+            100%{
+                top: 0;
+            }
+        }
+
+        .image img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        /* -- ## --- RESUABLE CSS -- ## -- */
+        .top-header{
+            text-align: center;
+
+        }
+        .top-header h1{
+            font-weight: 600;
+            color: #e0fbfc;
+            margin-bottom: 10px;
+        }
+
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 30px 5%;
+        }
+
+        /* Style for each skill container */
+        .skill-container {
+            background-color: #293241;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        .skill-container h2 {
+            text-align: center;
+            color: #e0fbfc;
+            margin: 20px 0; /* Adjust the margin as needed */
+        }
+
+        .skills-list{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+        }
+
+        .skills-list span{
+            font-size: 14px;
+            background: #ee6c4d;
+            color: #e0fbfc;
+            padding: 2px 10px;
+            border-radius: 5px;
+        }
+
+        /* Style for each project container */
+
+        .project-container{
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+            padding: 30px 5%;
+        }
+        .project-box{
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            width: 30%;
+            height: 250px;
+            background: #3d5a80;
+            border-radius: 20px;
+            box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+            overflow: hidden;
+            color: #98c1d9;
+        }
+
+        .project-box h2{
+            font-size: 25px;
+            color: #ee6c4d;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .project-box label{
+            font-size: 15px;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .link {
+            display: none;
+            font-size: 24px; /* Adjust the font size as needed */
+
+        }
+
+        .project-box:hover .link {
+            display: inline-block;
+            color: #000000;
+            z-index: 2;
+        }
+
+        .project-box::after, .contact-info::after{
+            content: "";
+            position: absolute;
+            bottom: -100%;
+            background: #fff;
+            width: 100%;
+            height: 100%;
+            transition: .4s;
+            z-index: 1;
+        }
+        .project-box:hover.project-box::after,
+        .contact-info:hover.contact-info::after{
+            bottom: 0;
+        }
+        
+        .project-box:hover.project-box>h2{
+            color: #ee6c4d;
+            z-index: 2;
+        }
+
+        .project-box:hover.project-box>label{
+            display: none;
+            z-index: 2;
+        }
+
+        .project-box:hover.project-box> a {
+            color: #000000;
+            z-index: 2;
+            font-size: 30px;
+            cursor: pointer;
+        }
+
+        /* Style for each internship and experience container */
+
+        .internship-container{
+            background-color: #293241;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        .internship-box {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            width: 100%;
+            height: 100%;
+            background: #3d5a80;
+            border-radius: 20px;
+            box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+            overflow: hidden;
+            color: #98c1d9;
+        }
+
+        .internship-box h2{
+            font-size: 25px;
+            color: #ee6c4d;
+            margin: 10px;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .internship-box p{
+            font-size: 18px;
+            color: #e0fbfc;
+            margin: 10px;
+            padding: 10px;
+        }
+        
+        .responsibilities-header {
+            text-align: end;
+        }
+
+        .bullet-list {
+            list-style-position: outside; /* Align the bullets to the left */
+            padding: 5px; /* Adjust the left padding as needed */
+            margin: 5px;
+        }
+
+        .product-box {
+            border-radius: 20px;
+            color: #e0fbfc;
+            background-color: #3d5a80;
+            margin: 5px;
+            padding: 5px;
+            display: flex;
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            flex-direction: column;
+        }
 
 
-      <section id="Internship" class="section Internship" id="Internship">
-        <h2 class="section__title">Internships & Certifications</h2>
+        .product-details {
+            margin: 10px;
+            padding: 10px;
+            align-items: center;
+        }
 
-      <div class="project">
-        <h3>Data Analytics Consulting Virtual Internship(KPMG)</h3>
-        <p class="project__description">
-          I was exposed with large amount of datasetswhere I had to clean the data, make report and dashboards.
-        </p>
-        <ul class="project__stack">
-          <li class="project__stack-item">Python</li>
-          <li class="project__stack-item">Data Analytics</li>
-          <li class="project__stack-item">SQL</li>
-        </ul>
 
-        <a
-          href="https://drive.google.com/file/d/1-04bTGCLKfxW-uz3q2aNsmPyTNd-eR_t/view?usp=sharing"
-          aria-label="live preview"
-          class="link link--icon"
-        >
-          <i aria-hidden="true" class="fas fa-external-link-alt"></i>
-        </a>
-        <h3>Data Analytics Virtual Experience Program(Quantium)</h3>
-        <p class="project__description">
-          Worked explicitly on MS Excel, made reports and
-dashboards.
-        </p>
-        <ul class="project__stack">
-          <li class="project__stack-item">Python</li>
-          <li class="project__stack-item">Data Analytics</li>
-          <li class="project__stack-item">MS Excel</li>
-        </ul>
+        .faker-phone {
+            position: relative;
+            background: #2d3436;
+            width: calc(76px * 4);
+            height: calc(138px * 4.5);
+            padding: 60px 15px 70px;
+            border-radius: 35px;
+            box-sizing: border-box;
+        }
 
-        <a
-          href="https://drive.google.com/file/d/1Dkgush-WfjwDiLdMLBMT9__kkyIBHb6e/view?usp=sharing"
-          aria-label="live preview"
-          class="link link--icon"
-        >
-          <i aria-hidden="true" class="fas fa-external-link-alt"></i>
-        </a>
-      </div>
-    </div>
-  </section>  
+        .faker-phone::before {
+            position: absolute;
+            top: 27px;
+            left: 50%;
+            margin-left: -25px;
+            width: 50px;
+            height: 6px;
+            border-radius: 3px;
+            background: #000;
+            opacity: .7;
+        }
 
- <!-- duplicate the above section and you can change it to paper or experience-->
+        .faker-phone::after {
+            content: '';
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            margin-left: -22px;
+            height: 40px;
+            width: 40px;
+            background: rgba(0, 0, 0, .5);
+            border: 2px solid rgba(0, 0, 0, .8);
+            border-radius: 100%;
+        }
 
-      
-      <!-- Skills -->
-      <section class="section skills" id="skills">
-        <h2 class="section__title">Skills</h2>
-        <div class="projects__grid">
-          <div class="project">
-            <h3>Technical</h3> <!--Peoject Title -->  
-            <ul class="skills__list">
-              <li class="skills__list-item btn btn--plain">Machine Learning</li>                        <!--You can fill in the elective course and you can remove extras-->
-              <li class="skills__list-item btn btn--plain">Deep Learning</li>
-              <li class="skills__list-item btn btn--plain">NLP</li>
-              <li class="skills__list-item btn btn--plain">Python</li>
-              <li class="skills__list-item btn btn--plain">Java</li>
-              <li class="skills__list-item btn btn--plain">C and C++</li>
-              <li class="skills__list-item btn btn--plain">Web Development</li>
-           </ul>
-          </div>
-          <div class="project">
-            <h3>Tools</h3>
-            <ul class="skills__list">
-              <li class="skills__list-item btn btn--plain">Matlab</li>                        <!--You can fill in the elective course and you can remove extras-->
-              <li class="skills__list-item btn btn--plain">Android Studio</li>
-              <li class="skills__list-item btn btn--plain">PowerBi</li>
-              <li class="skills__list-item btn btn--plain">Tableu</li>
-              <li class="skills__list-item btn btn--plain">MySQL</li>
-              <li class="skills__list-item btn btn--plain">MS Excel</li>
-           </ul>
-          </div>
-          <div class="project">
-            <h3>Graphics</h3>
-            <ul class="skills__list">
-              <li class="skills__list-item btn btn--plain">Adobe After Effects</li>                        <!--You can fill in the elective course and you can remove extras-->
-              <li class="skills__list-item btn btn--plain">Adobe Premiere Pro</li>
-              <li class="skills__list-item btn btn--plain">Filmora</li>
-              <li class="skills__list-item btn btn--plain">Canva</li>
-           </ul>
-          </div>
+        .faker-phone--screen {
+            width: 100%;
+            height: 100%;
+            background: #000;
+            overflow: auto;
+            position: relative;
+        }
+        
+        .faker-phone--screen p {
+            color: #fff;
+            animation: fadeIn 3s ease-out;
+            text-align: center;
+            margin-top: 30px;
+        }
+        
+        .h1 {
+            text-align: center;
+            color: #fff;
+            margin: 10px;
+            animation: fadeIn 1.5s ease-out;
+            font-size: 30px;
+        }
+        
+        @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        }
+        
+        #myPieChart {
+            margin-top: 20px;
+            padding: 5px;
+            max-width: 100%;
+            max-height: 100%;
+            animation: fadeIn 2s ease-out;
+        }
+        
+        p span {
+            color: #4caf50; /* Green color */
+        }
+        
+    
+
+
+
+        /* Style for each footer container */
+
+        footer {
+            background-color: #293241;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px;
+        }
+        /* .container{
+            scroll-snap-type: y mandatory;
             
+        } */
+        /* section{
+            scroll-snap-align: start ;   
+        } */
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- --------------- NAVIGATION BAR --------------- -->
+        <nav class="header" id="navbar">
+            <div class="logo">
+                <h1>Souvik<span>Ghosh</span></h1>
+            </div>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#project">Projects</a></li>
+                    <li><a href="#internships">Internships</a></li>
+                    <li><a href="#research">Researches</a></li>
+                </ul>
+            </div>
+            <a href="https://www.linkedin.com/in/souvikghoshaz/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Connect with me</a>
+        </nav>
+        <!-- --------------- MAIN --------------- -->
+        <div class="main-content" id="about">
+            <section class="main">
+                <div class="left">
+                    <div class="line"></div>
+                    <h1>Hi there! I'm Souvik Ghosh</h1>
+                    <h2>An Aspiring <span class="auto-type"></span> </h2>
+                    <p>I am a second-year MSc Data Science student with <b style="color: yellow;">1 year</b> of IT industry experience.
+                        My expertise includes Machine Learning, Deep Learning, and Natural Language Processing, demonstrated through successful 
+                        hands-on projects. Currently researching GenAI, I am committed to applying data-driven insights to tackle real-world 
+                        challenges.
+                        </p>
+                    
+                    <a href="https://drive.google.com/file/d/1eRhUk7XurlF5wPb6oBemKI-97n1y5r5P/view?usp=sharing" target="_blank" rel="noopener noreferrer"class="btn btn-primary">Download CV</a>
+                </div>
+                <div class="right">
+                    <div class="image">
+                        <img src="hi.jpg" alt="Profile Picture">
+                    </div>
+                </div>               
+            </section>
 
-          
+            <!-- -------------- SKILLS BOX ---------------- -->
+
+            <section class="section" id="skills">
+                <div class="top-header">
+                    <h1>Skills</h1>
+                </div>
+                <div class="skills">
+                    <div class="skill-container">
+                        <h2>Data Science</h2>
+                        <div class="skills-list">
+                            <span>Python</span>
+                            <span>Machine Learning</span>
+                            <span>Statistics</span>
+                            <span>Deep Learning</span>
+                            <span>Generative AI</span>
+                            <span>ML Ops</span>
+                        </div>
+                    </div>
+                    <div class="skill-container">
+                        <h2>Frameworks</h2>
+                        <div class="skills-list">
+                            <span>scikit learn</span>
+                            <span>numpy and pandas</span>
+                            <span>beautiful soup</span>
+                            <span>streamlit</span>
+                            <span>tensorflow</span>
+                            <span>pytorch</span>
+                        </div>
+                    </div>
+                    <div class="skill-container">
+                        <h2>Tools</h2>
+                        <div class="skills-list">
+                            <span>PowerBI</span>
+                            <span>Tableau</span>
+                            <span>Git</span>
+                            <span>AWS</span>
+                        </div>
+                    </div>   
+                    <div class="skill-container">
+                        <h2>Languages</h2>
+                        <div class="skills-list">
+                            <span>C/C++</span>
+                            <span>Java</span>
+                            <span>SQL</span>
+                            <span>HTML,CSS and JavaScript</span>
+                        </div>
+                    </div>   
+                </div>             
+            </section>
+
+            <!-- -------------- PROJECTS BOX ---------------- -->
+
+            <section class="section" id="project">
+                <div class="top-header">
+                    <h1>Projects</h1>
+                </div>
+                <div class="project-container">
+                    <div class="project-box">
+                        <h2>URL Gaurd: Malware Detection and Classification</h2>
+                        <label>Machine Learning Algorithms</label>
+                        <label>Gradient Decent | Decision Tree | XGBoosrt</label>
+                        <a class="link" href="https://github.com/PranavGhosh19/URL-Guard-Malware-Detection-and-Classification" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a class="link" href="https://pranavghosh19.github.io/URL-Guard-Malware-Detection-and-Classification/" target="_blank" rel="noopener noreferrer">
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                        
+                    </div>
+                    <div class="project-box">
+                        <h2>Power BI Dashboards</h2>
+                        <label>Reports and Insights</label>
+                        <label>Power Query Editor | DAX Functions | ETL</label>
+                        <a class="link" href="https://www.novypro.com/project/delivery-analysis" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-solid fa-chart-line"></i>
+                        </a>
+
+                    </div>
+                    <div class="project-box">
+                        <h2>Movie Recommendation System</h2>
+                        <label>Deep Learning Algorithm</label>
+                        <label>Convolutional Neural Network</label>
+                        <a class="link" href="https://github.com/PranavGhosh19/Movie-Recommendation-System" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a class="link" href="https://1drv.ms/p/s!ApIEyo-IW1RslDs9nlfIljm_v_zl" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-solid fa-file-powerpoint"></i>
+                        </a>
+                    </div>
+                    <div class="project-container">
+                    <div class="project-box">
+                        <h2>The Eye: Attendence Automatic System</h2>
+                        <label>Internet of Things</label>
+                        <a class="link" href="https://onedrive.live.com/view.aspx?resid=6C545B888FCA0492%212435&authkey=!AATFElcpYPgXK20" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-solid fa-file-powerpoint"></i>
+                        </a>
+                    </div>
+                    <div class="project-box">
+                        <h2>Microsoft Advanced Excel</h2>
+                        <label>Google Spreadsheets</label>
+                        <a class="link" href="https://docs.google.com/spreadsheets/d/e/2PACX-1vS9JwsOxAt2AQG749-vOUiWsrZwLicig8v7KWA2mDioB7KSejAJ2NDGGAzpq6rQPyR9LFmm99X7aUP1/pubhtml?gid=1995887939&single=true" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-solid fa-file-excel"></i>
+                        </a>
+                    </div>
+                    <div class="project-box">
+                        <h2>Case Studies</h2>
+                        <label>Machine Learning Algorithms</label>
+                        <a class="link" href="#" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- -------------- INTERNSHIPS AND EXPERIENCES BOX ---------------- -->
+
+            <section class="section" id="internships">
+                <div class="top-header">
+                    <h1>Internship and Experience (07 Months)</h1>
+                </div>
+                <div class="project-container">
+                    <div class="internship-box">
+                        <h2>Event Executive (06 Months)</h2>
+                        <a href="https://kagolf.co.in/" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
+                            <p>Company: K&A Golf Private Limited <i class="fas fa-external-link-alt"></i></p>
+                        </a>
+                        <p>Roles and Responsibilities</p>
+                        <ul class="bullet-list">
+                            <li>Conducted market research for 3+ in-house products and hosted golf events in 11 cities nationwide.</li>
+                            <li>Created 20+ 3D rendering models for clients' indoor setup services to support the golf-playing platform.</li>
+                            <li>Designed 30+ PowerPoint presentations for storytelling the business models & onboarding the clients.</li>
+                        </ul>
+                        <p>Tools used: Google Spreadsheets | Microsoft Office Suite | 3D Rendering (Cohoom)</p>
+                        <p><a href="https://drive.google.com/file/d/1OxrfjMVunlqzwhxqji08D4I0iEfNRHMs/view?usp=sharing" target="_blank" style="text-decoration: none; color: #ee6c4d;">Certificate <i class="fas fa-external-link-alt"></i></a></p>
+                    </div>
+                    <div class="internship-box">
+                        <h2>Game Curator and Tester Intern (01 Month)</h2>
+                        <a href="https://www.primebook.in/" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
+                            <p>Company: Floydwiz Technologies Private Limited (Primebook India) <i class="fas fa-external-link-alt"></i></p>
+                        </a>
+                        <p class="responsibilities-header">Roles and Responsibilities</p>
+                        <ul class="bullet-list">
+                            <li>Tested 2000+ HTML5-based games on the given software and reported 20+ bugs to improve the code.</li>
+                            <li>Performed and reported exploratory data analysis on the game data provided using google spreadsheets.</li>
+                            <li>Executed intermediate excel formulas and conditions on the gaming data to understand the latest trends.</li>
+                        </ul>
+                        <p>Tools used: Google Spreadsheets | Microsoft Excel | Software Testing</p>
+                        <p><a href="https://drive.google.com/file/d/1Nd6hXtZhpCwIynyeh7UrTktffmKEvhzm/view?usp=sharing" target="_blank" style="text-decoration: none; color: #ee6c4d;">Certificate <i class="fas fa-external-link-alt"></i></a></p>
+                    </div>
+            </section>
+            <!-- -------------- FOOTER BOX ---------------- -->
+
+            <footer class="footer">
+                <p>Created by Pranav Ghosh!</p>
+                <p>&copy; 2024 Pranav Ghosh. All rights reserved.</p>
+            </footer>
         </div>
-      </section>
-
-    <footer class="footer">
-      <a
-        href="" 
-        class="link footer__link"
-      >  
-        <!-- Created By Ashik Sanyo!  edit it to your name -->
-      </a>
-    </footer>
-
-    <div class="scroll-container">
-    <div class="scroll-top">
-      <a aria-label="Scroll up" href="#top">
-        <i aria-hidden="true" class="fas fa-arrow-up"></i>
-      </a>
-    </div>
     </div>
 
-    <script src="./script.js"></script>
-  </body>
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+
+    <script>
+        /* ----- TYPING EFFECT ----- */
+        var typed = new Typed(".auto-type", {
+            strings:["Data Scientist.", "ML Engineer.", "AI Engineer.", "Data Analyst."],
+            typeSpeed:50,
+            backSpeed:50,
+            loop:true
+        });
+    </script>
+</body>
 </html>
